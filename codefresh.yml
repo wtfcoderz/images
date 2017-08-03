@@ -2,16 +2,16 @@ version: '1.0'
 
 steps:
 
-  build-nodereact:
+  build_nodereact:
     type: build
     image_name: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
-    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
+    tag: nodereact
     working_directory: nodereact
     
 
-  push-nodereact:
+  push_nodereact:
     type: push
-    candidate: ${{build-nodereact}}
+    candidate: ${{build_nodereact}}
     registry: dockerhub
-    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
+    tag: nodereact
 
